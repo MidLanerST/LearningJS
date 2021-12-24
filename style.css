@@ -140,7 +140,7 @@ div {
     border-color: transparent;
     font-size: 20px;
     margin: 10px 8px 10px 8px;
-    background-color: rgb(226, 200, 51);
+    background-color: rgb(94, 93, 93);
     color: white;
     height: 40px;
     width: 40px;
@@ -149,12 +149,12 @@ div {
 
 .numberButtons:hover
 {
-    background-color: darkgray;
+    background-color: rgb(119, 119, 119);
     opacity: 1;
 }
 
 .numberButtons:active {
-    background-color:gray;
+    background-color:darkslategray;
 }
 
 
@@ -163,10 +163,24 @@ div {
     border-color: transparent;
     font-size: 20px;
     margin: 10px 8px 10px 8px;
-    background-color: white;
-    color: black;
+    background-color: #4D9C49;
+    color: white;
     height: 40px;
     width: 40px;
+}
+
+.operationButtons:hover
+{
+    background-color: rgb(47, 187, 40);
+    opacity: 1;
+}
+
+.operationButtons:active {
+    background-color:rgb(29, 109, 25);
+}
+
+.operationButtons:focus {
+    background-color:rgb(29, 109, 25);
 }
 
 .utilityButtons {
@@ -174,25 +188,18 @@ div {
     border-color: transparent;
     font-size: 18px;
     margin: 10px 8px 10px 8px;
-    background-color: white;
-    color: black;
+    background-color: rgb(129, 129, 129);
+    color: white;
     height: 40px;
     width: 40px;
 }
 
+.utilityButtons:hover
+{
+    background-color: darkgray;
+    opacity: 1;
+}
 
-.button:hover {
-    color: #202129;
-    background-color: #e1e2e2;
-    opacity: 1;
-  }
-  
-.button:active {
-    background-color: #d5d6d6;
-    opacity: 1;
-  }
-  
-.button:focus {
-    outline: 1px dotted #959595;
-    outline-offset: -4px;
-  }
+.utilityButtons:active {
+    background-color:rgb(72, 82, 82);
+}
