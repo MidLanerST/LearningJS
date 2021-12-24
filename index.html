@@ -8,7 +8,6 @@
   </head>
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.1/math.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/expr-eval/2.0.2/bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js">
     </script>
@@ -28,41 +27,50 @@
         <div class='container'>
             <div class='row'>
                 <div class='col'>
-                    <button onclick="clearAll()">AC</button>
-                    <button onclick="undoAdjust()">Undo</button>
-                    <button onclick="negateValue()">negate</button>
-                    <button onclick="setOperation('/')">/</button>
-                    <button onclick="setOperation('^')">^</button>
+                    <button class="numberButtons" onclick="adjustValue('!')">!</button>
+                    <button class="utilityButtons" onclick="clearAll()">AC</button>
+                    <button class="utilityButtons" onclick="undoAdjust()">	
+&#10550;</button>
+                    <button class="utilityButtons" onclick="negateValue()">&#177;</button>
+                    <button class="operationButtons" onclick="setOperation('/')">	
+&#247;</button>
 
                 </div>
 
                 <div class='col'>
-                    <button onclick="adjustValue(7)">7</button>
-                    <button onclick="adjustValue(8)">8</button>
-                    <button onclick="adjustValue(9)">9</button>
-                    <button onclick="setOperation('*')">*</button>
+                    <button class="operationButtons" onclick="setOperation('^')">x	
+&#8319;</button>
+                    <button class="numberButtons" onclick="adjustValue(7)">7</button>
+                    <button class="numberButtons" onclick="adjustValue(8)">8</button>
+                    <button class="numberButtons" onclick="adjustValue(9)">9</button>
+                    <button class="operationButtons" onclick="setOperation('*')">&#215;
+</button>
                 </div>
 
                 <div class='col'>
-                    <button onclick="adjustValue(4)">4</button>
-                    <button onclick="adjustValue(5)">5</button>
-                    <button onclick="adjustValue(6)">6</button>
-                    <button onclick="setOperation('-')">-</button>
+                    <button class="numberButtons" onclick="adjustValue('sqrt(')">&#8730;
+</button>
+                    <button class="numberButtons" onclick="adjustValue(4)">4</button>
+                    <button class="numberButtons" onclick="adjustValue(5)">5</button>
+                    <button class="numberButtons" onclick="adjustValue(6)">6</button>
+                    <button class="operationButtons" onclick="setOperation('-')">-</button>
                 </div>
 
                 <div class='col'>
-                    <button onclick="adjustValue(1)">1</button>
-                    <button onclick="adjustValue(2)">2</button>
-                    <button onclick="adjustValue(3)">3</button>
-                    <button onclick="setOperation('+')">+</button>
+                    <button class="numberButtons" onclick="adjustValue('cbrt(')">&#8731;
+</button>
+                    <button class="numberButtons" onclick="adjustValue(1)">1</button>
+                    <button class="numberButtons" onclick="adjustValue(2)">2</button>
+                    <button class="numberButtons" onclick="adjustValue(3)">3</button>
+                    <button class="operationButtons" onclick="setOperation('+')">+</button>
                 </div>
 
                 <div class='col'>
-                    <button onclick="adjustValue(0)">0</button>
-                    <button onclick="adjustValue('(')">(</button>
-                    <button onclick="adjustValue(')')">)</button>
-                    <button onclick="adjustValue('.')">.</button>
-                    <button onclick="performCalc()">=</button>
+                    <button class="numberButtons" onclick="adjustValue(0)">0</button>
+                    <button class="numberButtons" onclick="adjustValue('(')">(</button>
+                    <button class="numberButtons" onclick="adjustValue(')')">)</button>
+                    <button class="numberButtons" onclick="adjustValue('.')">.</button>
+                    <button class="utilityButtons" onclick="performCalc()">=</button>
                 </div>
             <div>
         </div>

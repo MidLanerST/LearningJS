@@ -122,8 +122,15 @@ function performCalc()
         equation = equation.concat(document.getElementById(i).innerText);
     }
 
-    clearAll()
-    document.getElementById(1).innerText = math.evaluate(equation)
+    clearAll();
+    try
+    {
+        document.getElementById(1).innerText = math.evaluate(equation);
+    } catch (error)
+    {
+        document.getElementById(1).innerText = "Error";
+    }
+    
     
     //console.log(math.evaluate(equation))
     //console.log(equation);
