@@ -20,8 +20,9 @@
 
     
     <div class='py-5'>
-        <div class = 'heading', id='Begin'>
-            <p id = '1'></p>
+        <div class = 'heading'>
+            <label for="main"></label>
+            <textarea id="main" class='equation' rows="4" cols="50"></textarea>
         </div>
 
         <div class='container'>
@@ -66,11 +67,11 @@
                 </div>
 
                 <div class='col'>
+                    <button class="numberButtons" onclick="adjustValue('.')">.</button>
                     <button class="numberButtons" onclick="adjustValue(0)">0</button>
                     <button class="numberButtons" onclick="adjustValue('(')">(</button>
                     <button class="numberButtons" onclick="adjustValue(')')">)</button>
-                    <button class="numberButtons" onclick="adjustValue('.')">.</button>
-                    <button class="utilityButtons" onclick="performCalc()">=</button>
+                    <button id ='equals' class="utilityButtons" onclick="performCalc()">=</button>
                 </div>
             <div>
         </div>

@@ -51,6 +51,34 @@ div {
     padding-left: 15px;
 }
 
+
+.equation{
+    background-color: transparent;
+    color: white;
+    font-size: 34px;
+    border:1px solid transparent;
+    outline: none;
+
+    clear: both;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    word-break: break-all;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+}
+
+.equation:focus {
+    border:1px solid transparent;
+    outline: none;
+}
+
+
 .heading{
   display: flex;
   flex-direction: row;
@@ -202,4 +230,10 @@ div {
 
 .utilityButtons:active {
     background-color:rgb(72, 82, 82);
+}
+
+
+
+.test {
+    background-color: goldenrod;
 }

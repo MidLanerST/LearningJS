@@ -1,49 +1,26 @@
+$('textArea#main').keyup(function(event) {
+
+    if(event.keyCode === 13) {
+        $('button#equals').click()
+    }
+})
+
 
 // From here - Actual
-
-
-
-var phase = 1;
-
-
-//
-function createNumOrOp()
-{
-    phase++;
-    var p = document.createElement("p");
-    p.innerText = '';
-    p.id = phase;
-    document.getElementById('Begin').appendChild(p)
-}
-
 
 //
 function adjustValue(number)
 {
-    if((phase % 2 == 0))
-    {
-        createNumOrOp()
-    }
-
-    var to_adjust = document.getElementById(phase);
-    to_adjust.innerText = to_adjust.innerText.concat(number);
+    var textArea = $('textarea#main');
+    textArea.val(textArea.val().concat(number));
 }
 
 
 //
 function setOperation(op)
 {
-
-    if(document.getElementById(1).innerText != '')
-    {
-        if(!(phase % 2 == 0))
-        {
-            createNumOrOp()
-        }
-
-        var to_adjust = document.getElementById(phase);
-        to_adjust.innerText = op;
-    }
+    var textArea = $('textarea#main');
+    textArea.val(textArea.val().concat(op));
 }
 
 
@@ -52,31 +29,17 @@ function setOperation(op)
 function negateValue()
 {
 
-    if(!(phase % 2 == 0))
+    var textArea = $('textarea#main');
+
+    if (textArea.val().search('-') == 0)
     {
-        var to_adjust = document.getElementById(phase);
-
-        if (to_adjust.innerText.search('-') == 0)
-        {
-            to_adjust.innerText= to_adjust.innerText.slice(1, to_adjust.innerText.length);
-        }
-
-        else
-        {
-            to_adjust.innerText= '-'.concat(to_adjust.innerText);
-        }
+        textArea.val(textArea.val().slice(1, textArea.val().length));
     }
 
-}
-
-
-//
-function stringToNumber(id)
-{
-
-    switch (id)
+    else
     {
-        // Something
+        console.log(textArea.val())
+        textArea.val( '-'.concat(textArea.val()) );
     }
 
 }
@@ -86,49 +49,34 @@ function stringToNumber(id)
 function undoAdjust()
 {
 
-    var to_adjust = document.getElementById(phase);
+    var textArea = $('textarea#main');
 
-    to_adjust.innerText= to_adjust.innerText.slice(0,to_adjust.innerText.length-1);
-
-    if( (phase > 1) && (to_adjust.innerText == '') )
-    {
-        phase--;
-        document.getElementById('Begin').removeChild(to_adjust);
-        //to_adjust = document.getElementById(phase);
-    }
+    textArea.val(textArea.val().slice(0, textArea.val().length-1));
 }
 
 
 //
 function clearAll()
 {
-    for(phase; phase > 1; phase--)
-    {
-        var to_adjust = document.getElementById(phase);
-        document.getElementById('Begin').removeChild(to_adjust);
-    }
-    document.getElementById(1).innerText = '';
+    var textArea = $('textarea#main');
+    
+    textArea.val('');
 }
 
 
 //
 function performCalc()
-{
-    var equation = '';
-    var total  = 0;
-
-    for(let i = 1; i <= phase; i++)
-    {
-        equation = equation.concat(document.getElementById(i).innerText);
-    }
+{  
+    var textArea = $('textarea#main');
+    var equation = textArea.val();
 
     clearAll();
     try
     {
-        document.getElementById(1).innerText = math.evaluate(equation);
+        textArea.val(math.evaluate(equation));
     } catch (error)
     {
-        document.getElementById(1).innerText = "Error";
+        textArea.val ("Error");
     }
     
     
